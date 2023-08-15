@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    background-color: rgb(85, 19, 19);
+    margin-top: 50px;
+}
+
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(156, 156, 156);
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    padding: 50px;
+}
+
+img {
+    width: 100px;
+    border-radius: 20px;
+    border: 5px solid red;
+    background-color: white;
+    margin: 20px;
+}
+
+p {
+    margin-top: 10px;
+}
+
+.div1 {
+    width: 200px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+    background-color: rgb(97, 78, 242);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.58);
+}
+
+.fire {
+    color: rgb(255, 255, 255);
+    background-color: brown;
+    border-radius: 10px;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+}
+.grass {
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+}
+.poison {
+    color: white;
+    background-color: rgb(132, 0, 255);
+    border-radius: 10px;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+}
+.water {
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+}
+
+.numero {
+    display: block;
+    margin-left: -140px;
+    margin-bottom: 10px;  
+    margin-top: -50px;
+}
+
+.nome {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+}
+
+.titulo {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    margin-top: -90px;
+    padding: 50px;
+}
+
+.psqbox {
+    margin: auto;
+    display: inline-block;
+}
