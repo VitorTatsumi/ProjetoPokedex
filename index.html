@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agdasima&family=Caprasimo&display=swap" rel="stylesheet">
     <title>PokéDex</title>
 </head>
-<body class="container">
+<body class="container"  onload="carregaOrdenado()">
     <header>
+        <div id="searchbox">
+            <input type="text" id="textoPesquisa">
+            <input id="botaoPesquisa" type="button" value="Pesquisar" onclick="pesquisar()">
+        </div>
+        <div id="mainSection"></div>
+        <div id="searchSection"></div>
     </header>
-    <main id="princi">
+    <main>
     </main>
     <script src="script.js"></script>
     <footer>
+        <p>teste</p>
     </footer>
 </body>
 </html>
