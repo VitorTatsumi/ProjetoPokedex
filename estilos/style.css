@@ -6,7 +6,7 @@
 }
 
 html {
-    background-color: rgb(85, 19, 19);
+    background-color: rgb(94, 22, 22);
     margin-top: 50px;
 }
 
@@ -22,22 +22,12 @@ html {
     margin: auto;
 }
 
-#mainSection {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: rgb(45, 3, 3);
-}
-
 img {
-    width: 100px;
+    width: 120px;
     border-radius: 20px;
     margin: 20px;
     background-image: url('https://i.pinimg.com/564x/3d/aa/ea/3daaea18dc0a550c5cdd5ba55f11a9df.jpg');
-    background-size: 100px 100px;
+    background-size: 120px 120px;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.485);
     border: 2px solid black;
 }
@@ -73,23 +63,27 @@ footer {
     background-size: 50px;
     background-repeat: no-repeat;
     margin-bottom: 40px;
-    background-color: rgb(97, 78, 242);
+    background-color: rgb(86, 68, 227);
     border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.58);
     font-family: 'Agdasima', sans-serif;
+    background-image: url('https://img.freepik.com/vetores-gratis/fundo-azul-com-efeito-de-zoom-gradiente_23-2149762303.jpg?w=740&t=st=1692203224~exp=1692203824~hmac=a18cbfe4a0bf3523215e425c04f24134beba513aba74b64c503653867ee0f663');
+    background-size: 100% 100%;
 }
 
 .div1:hover {
     background-color: rgb(97, 26, 26);
-    color: white;
     transform: scale(110%);
     transition: 0.2s;
+    background-image: url('https://img.freepik.com/vetores-gratis/fundo-de-estilo-comico-em-design-plano_52683-53319.jpg?w=826&t=st=1692203126~exp=1692203726~hmac=b1a315464ac6610bf3a71911dd29dfbcb85ff73ba553150934b27ac19f73bdb3');
 }
 
 .fire {
     color: rgb(255, 255, 255);
-    background-color: rgb(205, 29, 29);
+    background-image: linear-gradient(to top,rgb(255, 190, 70), rgb(255, 45, 45), rgb(187, 26, 26));
+    text-shadow: 1px 1px 1px rgb(128, 0, 0);
+    box-shadow: 1px 1px 3px black;
     border-radius: 10px;
     width: 80px;
     height: 20px;
@@ -104,7 +98,9 @@ footer {
 
 .grass {
     color: white;
-    background-color: rgb(0, 196, 0);
+    background-image: linear-gradient(to top,rgb(97, 255, 73), rgb(43, 200, 25), rgb(0, 143, 12));
+    text-shadow: 1px 1px 1px rgb(31, 78, 11);
+    box-shadow: 1px 1px 3px black;
     border-radius: 10px;
     width: 80px;
     height: 20px;
@@ -116,9 +112,12 @@ footer {
     background-color: rgb(121, 163, 121);
     transform: scale(120%);
 }
+
 .poison {
     color: white;
-    background-color: rgb(132, 0, 255);
+    background-image: linear-gradient(to top,rgb(156, 81, 225), rgb(132, 0, 255), rgb(82, 13, 147));
+    text-shadow: 1px 1px 1px rgb(55, 11, 95);
+    box-shadow: 1px 1px 3px black;
     border-radius: 10px;
     width: 80px;
     height: 20px;
@@ -132,7 +131,9 @@ footer {
 }
 .water {
     color: white;
-    background-color: blue;
+    background-image: linear-gradient(to top,rgb(127, 127, 241), rgb(41, 41, 214), rgb(20, 20, 167));
+    text-shadow: 1px 1px 1px rgb(55, 11, 95);
+    box-shadow: 1px 1px 3px black;
     border-radius: 10px;
     width: 80px;
     height: 20px;
@@ -147,7 +148,9 @@ footer {
 
 .bug {
     color: white;
-    background-color: rgb(64, 108, 64);
+    background-image: linear-gradient(to top,rgb(124, 204, 124), rgb(64, 108, 64), rgb(63, 98, 63));
+    text-shadow: 1px 1px 1px rgb(55, 11, 95);
+    box-shadow: 1px 1px 3px rgb(64, 108, 64);
     border-radius: 10px;
     width: 80px;
     height: 20px;
@@ -162,6 +165,10 @@ footer {
 
 .flying {
     color: white;
+    background-image: linear-gradient(to top,rgb(167, 228, 254), rgb(25, 186, 255), rgb(29, 107, 140));
+    text-shadow: 1px 1px 1px rgb(55, 11, 95);
+    box-shadow: 1px 1px 3px rgb(64, 108, 64);
+    
     background-color: rgb(25, 186, 255);
     border-radius: 10px;
     width: 80px;
@@ -179,21 +186,31 @@ footer {
 .numero {
     margin-left: -140px;
     margin-bottom: 10px;  
-    margin-top: -50px;
+    margin-top: -40px;
     font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 1px 1px white;
+}
+
+.numero:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px rgb(0, 0, 0);
 }
 
 .nome {
-    color: white;
-    font-size: 1.5em;
+    color: rgb(192, 5, 5);
+    font-size: 1.8em;
     text-align: center;
     width: 100%;
     font-weight: bold;
+    margin-top: -10px;
+    text-shadow: 1px 1px white;
 }
 
 .nome:hover {
     transform: scale(120%);
     transition: 0.2s;
+    text-shadow: 2px 2px rgb(255, 255, 255);
 }
 
 .titulo {
@@ -217,8 +234,9 @@ footer {
 #searchbox {
     width: 100%;
     margin-top: -150px;
-    border: 1px solid black;
+    border: 0px solid black;
     padding: 10px;
+    margin-right: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -228,5 +246,18 @@ footer {
 
 #searchSection {
     background-color: rgb(191, 32, 32);
+    margin: auto;
+    padding: 50px;
+}
+
+#mainSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: rgb(45, 3, 3);
+    padding: 50px;
     margin: auto;
 }
