@@ -106,7 +106,7 @@ function carregaOrdenado(){
             cartao.appendChild(textoTipo);
 
             textoTipo2.innerHTML = JSON.stringify(pokemons[i].tipo[1]).replace(/"/g, '').toUpperCase();
-            textoTipo.appendChild(textoTipo2);
+            cartao.appendChild(textoTipo2);
         }
 
         if(pokemons[i].tipo[0] == 'grass'){
@@ -203,5 +203,4 @@ function pesquisar(){
         textoTipo2psq.innerHTML = JSON.stringify(pokemons[index].tipo[1]).replace(/"/g, '').toUpperCase();
         pesquisaCard.appendChild(textoTipo2psq);
     }
-
 }
