@@ -11,33 +11,53 @@ html {
 }
 
 .container {
-    font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(156, 156, 156);
     width: 80%;
     height: 100%;
-    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     border-radius: 30px;
     padding: 50px;
+    margin: auto;
+}
+
+#mainSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    padding-top: 20px;
 }
 
 img {
     width: 100px;
     border-radius: 20px;
-    border: 5px solid red;
-    background-color: white;
     margin: 20px;
+    background-image: url('../imagens/pokebolafundo.png');
+    background-size: 100px 100px;
+}
+
+header {
+    width: 100%;
 }
 
 p {
     margin-top: 10px;
 }
 
+footer {
+    width: 100%;
+    text-align: center;
+}
+
 .div1 {
     width: 200px;
     height: 350px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -51,23 +71,31 @@ p {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.58);
+    font-family: 'Agdasima', sans-serif;
+}
+
+.div1:hover {
+    background-color: rgba(255, 58, 58, 0.246);
+    color: white;
 }
 
 .fire {
     color: rgb(255, 255, 255);
-    background-color: brown;
+    background-color: rgb(205, 29, 29);
     border-radius: 10px;
     width: 80px;
     height: 20px;
     text-align: center;
+    padding: 3px;
 }
 .grass {
     color: white;
-    background-color: green;
+    background-color: rgb(0, 196, 0);
     border-radius: 10px;
     width: 80px;
     height: 20px;
     text-align: center;
+    padding: 3px;
 }
 .poison {
     color: white;
@@ -76,6 +104,7 @@ p {
     width: 80px;
     height: 20px;
     text-align: center;
+    padding: 3px;
 }
 .water {
     color: white;
@@ -84,13 +113,34 @@ p {
     width: 80px;
     height: 20px;
     text-align: center;
+    padding: 3px;
+}
+
+.bug {
+    color: white;
+    background-color: rgb(64, 108, 64);
+    border-radius: 10px;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    padding: 3px;
+}
+
+.flying {
+    color: white;
+    background-color: rgb(25, 186, 255);
+    border-radius: 10px;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    padding: 3px;
 }
 
 .numero {
-    display: block;
     margin-left: -140px;
     margin-bottom: 10px;  
     margin-top: -50px;
+    font-size: 1.2em;
 }
 
 .nome {
@@ -98,6 +148,7 @@ p {
     font-size: 1.5em;
     text-align: center;
     width: 100%;
+    font-weight: bold;
 }
 
 .titulo {
@@ -108,7 +159,24 @@ p {
     padding: 50px;
 }
 
-.psqbox {
+#textoPesquisa {
+    width: 100%;
     margin: auto;
-    display: inline-block;
+}
+
+#botaoPesquisa {
+    width: 100%;
+    margin: auto;
+}
+
+#searchbox {
+    width: 100%;
+    margin: auto;
+    margin-top: -150px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#searchSection {
+    background-color: black;
 }
