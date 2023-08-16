@@ -75,6 +75,8 @@ class Pokemon{
 }
 
 function carregaOrdenado(){
+    //pesquisaCard.parentNode.removeChild(pesquisaCard);
+    //pesquisaCard.style.display = 'none';
     for (i = 0; i < pokemons.length; i++){
 
         var mainSection = document.getElementById('mainSection');
@@ -166,7 +168,9 @@ function pesquisar(){
     var index = (result.numero) - 1;
 
     //Apaga o conteúdo da mainSection 
-    mainSection.style.display = 'none';
+    //mainSection.style.display = 'none';
+    mainSection.parentNode.removeChild(mainSection);
+
 
     //Criação do card da pesquisa
     var sectionPesquisa = document.getElementById('searchSection');
@@ -174,6 +178,8 @@ function pesquisar(){
     var pesquisaCard = document.createElement('div');
     pesquisaCard.className = 'div1'
     sectionPesquisa.appendChild(pesquisaCard)
+
+
 
     var pesquisaNumero = document.createElement('p');
     pesquisaNumero.className = 'numero';
