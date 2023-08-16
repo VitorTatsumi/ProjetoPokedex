@@ -4,7 +4,7 @@ const pokemons = [{
     nome: "Bulbasaur", 
     numero:  1, 
     tipo: ['grass', 'poison'], 
-    imagem: 'https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/cf47f9fac4ed3037ff2a8ea83204e32aff8fb5f3.png'
+    imagem: 'https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/cf47f9fac4ed3037ff2a8ea83204e32aff8fb5f3.png', texto: 'Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the suns rays, the seed grows progressively larger.'
 }, {
     nome: "Ivysaur", 
     numero: 2, 
@@ -35,80 +35,157 @@ const pokemons = [{
     numero: 7,
     tipo: ['water'], 
     imagem: 'https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/5794f0251b1180998d72d1f8568239620ff5279c.png'
+}, {
+    nome: "Wartortle",
+    numero: 8,
+    tipo: ['water'], 
+    imagem: 'https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/a3bc17e6215031332462cc64e59b7922ddd14b91.png'
+}, {
+    nome: "Blastoise",
+    numero: 9,
+    tipo: ['water'], 
+    imagem: 'https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/2fe157db59153af8abd636ab03c7df6f28b08242.png'
+}, {
+    nome: "Caterpie",
+    numero: 10,
+    tipo: ['bug'], 
+    imagem: 'https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/68f0cec6bcba20a0c53db3d8cfce81bd319d2c82.png'
+}, {
+    nome: "Metapod",
+    numero: 11,
+    tipo: ['bug'], 
+    imagem: 'https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/05fd4676fa4a4b58288510a97a5211e066e02464.png'
+}, {
+    nome: "Butterfree",
+    numero: 12,
+    tipo: ['bug', 'flying'], 
+    imagem: 'https://sg.portal-pokemon.com/play/resources/pokedex/img/pm/eacd20285cb634ba9fea41fc0fa13871c2fcbc66.png'
 }];
 
 //Fábrica de pokemons
 
 class Pokemon{
-    constructor(name, numero, tipo){
+    constructor(name, numero, tipo, imagem, texto){
         this.name = name;
         this.numero = numero;
         this.tipo = tipo;
-        this.imagem = 'https://img.pokemondb.net/artwork/large/' + name + '.jpg';
+        this.imagem = imagem;
+        this.texto = texto;
     }
 }
 
-for (i = 0; i < pokemons.length; i++){
+function carregaOrdenado(){
+    for (i = 0; i < pokemons.length; i++){
 
-    var cartao = document.createElement('div');
-    cartao.className= 'div1';
-    document.body.appendChild(cartao);
+        var mainSection = document.getElementById('mainSection');
+        
 
-    var textoNum = document.createElement('p');
-    textoNum.className = 'numero';
-    textoNum.innerHTML = JSON.stringify('nº' + pokemons[i].numero).replace(/"/g, '');
-    cartao.appendChild(textoNum);
+        var cartao = document.createElement('div');
+        cartao.className= 'div1';
+        mainSection.appendChild(cartao);
 
-    var textoNome = document.createElement('p');
-    textoNome.className = 'nome';
-    textoNome.innerHTML = JSON.stringify(pokemons[i].nome).replace(/"/g, '');
-    cartao.appendChild(textoNome);
+        var textoNum = document.createElement('p');
+        textoNum.className = 'numero';
+        textoNum.innerHTML = JSON.stringify('nº' + pokemons[i].numero).replace(/"/g, '');
+        cartao.appendChild(textoNum);
+
+        var textoNome = document.createElement('p');
+        textoNome.className = 'nome';
+        textoNome.innerHTML = JSON.stringify(pokemons[i].nome).replace(/"/g, '');
+        cartao.appendChild(textoNome);
+
+        cartao.appendChild(document.createElement('img')).src = pokemons[i].imagem;
+        var textoTipo = document.createElement('p');
+        var textoTipo2 = document.createElement('p');
+
+        if(pokemons[i].tipo[1] == undefined){
+            textoTipo.innerHTML = JSON.stringify(pokemons[i].tipo[0]).replace(/"/g, '').toUpperCase();
+            cartao.appendChild(textoTipo);
+        }else{
+            textoTipo.innerHTML = JSON.stringify(pokemons[i].tipo[0]).replace(/"/g, '').toUpperCase();
+            cartao.appendChild(textoTipo);
+
+            textoTipo2.innerHTML = JSON.stringify(pokemons[i].tipo[1]).replace(/"/g, '').toUpperCase();
+            textoTipo.appendChild(textoTipo2);
+        }
+
+        if(pokemons[i].tipo[0] == 'grass'){
+            textoTipo.className = 'grass';
+        }else if(pokemons[i].tipo[0] == 'poison'){
+            textoTipo.className = 'poison';
+        }else if(pokemons[i].tipo[0] == 'fire'){  
+            textoTipo.className = 'fire';
+        }else if(pokemons[i].tipo[0] == 'water'){
+            textoTipo.className = 'water';
+        }else if(pokemons[i].tipo[0] == 'bug'){
+            textoTipo.className = 'bug';
+        }else if(pokemons[i].tipo[0] == 'flying'){
+            textoTipo.className = 'flying';
+        }
+
+        if(pokemons[i].tipo[1] == 'grass'){
+            textoTipo2.className = 'grass';
+        }else if(pokemons[i].tipo[1] == 'poison'){
+            textoTipo2.className = 'poison';
+        }else if(pokemons[i].tipo[1] == 'fire'){  
+            textoTipo2.className = 'fire';
+        }else if(pokemons[i].tipo[1] == 'water'){
+            textoTipo2.className = 'water';
+        }else if(pokemons[i].tipo[1] == 'bug'){
+            textoTipo2.className = 'bug';
+        }else if(pokemons[i].tipo[1] == 'flying'){
+            textoTipo2.className = 'flying';
+        }
+
+        //Evento para quando o cartão for clicado
+        //Deve ficar dentro do laço para alimentar cada card inserido com este evento
+        cartao.addEventListener('click', function(){
+            alert('clicou');
+        });
+    }
+}
+
+
+var titulo = document.createElement('h1');
+titulo.innerHTML = 'PokéDex Tatsumi';
+titulo.className = 'titulo';
+document.body.prepend(titulo);
+
+function pesquisar(){
+    var textoPesquisa = document.getElementById('textoPesquisa').value;
+
+    //Faz a verificação se o valor do input existe no Array Pokemons
+    var encontrar = pokemons.find(pokemons => pokemons.nome.toUpperCase() === textoPesquisa.toUpperCase());
+    //var encontrar = JSON.stringify(encontrar);
+    var result = new Pokemon(encontrar.nome, encontrar.numero, encontrar.tipo, encontrar.imagem, encontrar.texto);
+
+    //Transforme e destransforma o objeto para leitura
+    //var result = JSON.stringify(result);
+    alert(result);
+
+    //Apaga o conteúdo da mainSection 
+    mainSection.style.display = 'none';
+
+    //Criação do card da pesquisa
+    var sectionPesquisa = document.getElementById('searchSection');
+    sectionPesquisa.className = 'mainSection';
+    var pesquisaCard = document.createElement('div');
+    pesquisaCard.className = 'div1'
+    sectionPesquisa.appendChild(pesquisaCard)
+
+    var pesquisaNumero = document.createElement('p');
+    pesquisaNumero.className = 'numero';
+    pesquisaNumero.innerHTML = JSON.stringify("nº" + result.numero).replace(/"/g, "");
+    pesquisaCard.appendChild(pesquisaNumero);
+
+    var pesquisaNome = document.createElement('p');
+    pesquisaNome.className = 'nome';
+    pesquisaNome.innerHTML = JSON.stringify(result.nome).replace(/"/g, '');
+    pesquisaCard.appendChild(pesquisaNome);
+    alert(result.nome);
 
     cartao.appendChild(document.createElement('img')).src = pokemons[i].imagem;
     var textoTipo = document.createElement('p');
     var textoTipo2 = document.createElement('p');
 
-    if(pokemons[i].tipo[1] == undefined){
-        textoTipo.innerHTML = JSON.stringify(pokemons[i].tipo[0]).replace(/"/g, '');
-        cartao.appendChild(textoTipo);
-    }else{
-        textoTipo.innerHTML = JSON.stringify(pokemons[i].tipo[0]).replace(/"/g, '');
-        cartao.appendChild(textoTipo);
-
-        textoTipo2.innerHTML = JSON.stringify(pokemons[i].tipo[1]).replace(/"/g, '');
-        textoTipo.appendChild(textoTipo2);
-    }
-
-    if(pokemons[i].tipo[0] == 'grass'){
-        textoTipo.className = 'grass';
-    }else if(pokemons[i].tipo[0] == 'poison'){
-        textoTipo.className = 'poison';
-    }else if(pokemons[i].tipo[0] == 'fire'){  
-        textoTipo.className = 'fire';
-    }else if(pokemons[i].tipo[0] == 'water'){
-        textoTipo.className = 'water';
-    }
-
-    if(pokemons[i].tipo[1] == 'grass'){
-        textoTipo2.className = 'grass';
-    }else if(pokemons[i].tipo[1] == 'poison'){
-        textoTipo2.className = 'poison';
-    }else if(pokemons[i].tipo[1] == 'fire'){  
-        textoTipo2.className = 'fire';
-    }else if(pokemons[i].tipo[1] == 'water'){
-        textoTipo2.className = 'water';
-    }
 }
-
-var psqbox = document.createElement('div');
-psqbox.className = 'psqbox';
-document.body.prepend(psqbox);
-
-var inputSearch = document.createElement('input');
-inputSearch.className = 'input-search';
-psqbox.prepend(inputSearch);
-
-var titulo = document.createElement('h1');
-titulo.innerHTML = 'TesteTitulo';
-titulo.className = 'titulo';
-document.body.prepend(titulo);
