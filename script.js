@@ -75,16 +75,20 @@ class Pokemon{
 }
 
 function carregaOrdenado(){
-    //pesquisaCard.parentNode.removeChild(pesquisaCard);
+    //sectionPesquisa.parentNode.removeChild(sectionPesquisa);
     //pesquisaCard.style.display = 'none';
     for (i = 0; i < pokemons.length; i++){
 
         var mainSection = document.getElementById('mainSection');
-        
+
+
 
         var cartao = document.createElement('div');
         cartao.className= 'div1';
         mainSection.appendChild(cartao);
+        /*Outra forma de adicionar elementos na div que talvez fosse mais facil
+        mainSection.innerHTML = '<div class="div1">'
+        */
 
         var textoNum = document.createElement('p');
         textoNum.className = 'numero';
@@ -139,11 +143,11 @@ function carregaOrdenado(){
             textoTipo2.className = 'flying';
         }
 
-        //Evento para quando o cartão for clicado
-        //Deve ficar dentro do laço para alimentar cada card inserido com este evento
-        cartao.addEventListener('click', function(){
+        /*Evento para quando o cartão for clicado
+        Deve ficar dentro do laço para alimentar cada card inserido com este evento*/
+        /*cartao.addEventListener('click', function(){
             alert('clicou');
-        });
+        });*/
     }
 }
 
@@ -174,6 +178,8 @@ function pesquisar(){
 
     //Criação do card da pesquisa
     var sectionPesquisa = document.getElementById('searchSection');
+    
+
     sectionPesquisa.className = 'mainSection';
     var pesquisaCard = document.createElement('div');
     pesquisaCard.className = 'div1'
