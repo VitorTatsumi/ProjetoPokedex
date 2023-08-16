@@ -161,7 +161,9 @@ function pesquisar(){
 
     //Transforme e destransforma o objeto para leitura
     //var result = JSON.stringify(result);
-    alert(result);
+
+    //Registra o index do Array do pokemon resultado da busca
+    var index = (result.numero) - 1;
 
     //Apaga o conteúdo da mainSection 
     mainSection.style.display = 'none';
@@ -175,17 +177,31 @@ function pesquisar(){
 
     var pesquisaNumero = document.createElement('p');
     pesquisaNumero.className = 'numero';
-    pesquisaNumero.innerHTML = JSON.stringify("nº" + result.numero).replace(/"/g, "");
+    pesquisaNumero.innerHTML = JSON.stringify("nº" + pokemons[index].numero).replace(/"/g, "");
     pesquisaCard.appendChild(pesquisaNumero);
 
     var pesquisaNome = document.createElement('p');
     pesquisaNome.className = 'nome';
-    pesquisaNome.innerHTML = JSON.stringify(result.nome).replace(/"/g, '');
+    pesquisaNome.innerHTML = JSON.stringify(pokemons[index].nome).replace(/"/g, "");
     pesquisaCard.appendChild(pesquisaNome);
-    alert(result.nome);
 
-    cartao.appendChild(document.createElement('img')).src = pokemons[i].imagem;
-    var textoTipo = document.createElement('p');
-    var textoTipo2 = document.createElement('p');
+    pesquisaCard.appendChild(document.createElement('img')).src = pokemons[index].imagem;
+
+
+    var textoTipopsq = document.createElement('p');
+    var textoTipo2psq = document.createElement('p');
+
+    alert(pokemons[index].tipo)
+
+    if(pokemons[index].tipo[1] == undefined){
+        textoTipopsq.innerHTML = JSON.stringify(pokemons[index].tipo[0]).replace(/"/g, '').toUpperCase();
+        pesquisaCard.appendChild(textoTipopsq);
+    }else{
+        textoTipopsq.innerHTML = JSON.stringify(pokemons[index].tipo[0]).replace(/"/g, '').toUpperCase();
+        pesquisaCard.appendChild(textoTipopsq);
+
+        textoTipo2psq.innerHTML = JSON.stringify(pokemons[index].tipo[1]).replace(/"/g, '').toUpperCase();
+        pesquisaCard.appendChild(textoTipo2psq);
+    }
 
 }
