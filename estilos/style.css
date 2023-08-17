@@ -232,12 +232,14 @@ footer {
 
 #textoPesquisa {
     width: 100%;
-    margin: auto;
 }
 
 #botaoPesquisa {
     width: 100%;
-    margin: auto;
+}
+
+#botaoReset {
+    width: 100%;
 }
 
 #searchbox {
@@ -250,7 +252,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
+    margin-left: -10px;
     padding: 10px;
 }
 
@@ -278,6 +280,7 @@ footer {
     width: 80%;
     padding: 50px;
     margin: auto;
+    margin-right: 50px;
     background-image: url('https://img.freepik.com/vetores-gratis/fundo-abstrato-gradiente-com-linhas-diagonais_23-2150541439.jpg?w=1380&t=st=1692209039~exp=1692209639~hmac=26c9e143495d6a104436adca81e9b79676c430d414a245d0ce3964b6f10307da');
     background-repeat: no-repeat;
     background-size: 100% 100%;
