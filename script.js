@@ -75,17 +75,23 @@ class Pokemon{
 }
 
 function carregaOrdenado(){
-    //sectionPesquisa.parentNode.removeChild(sectionPesquisa);
-    //pesquisaCard.style.display = 'none';
-    for (i = 0; i < pokemons.length; i++){
 
+    //Div que cria duplicado quando é feita mais de uma pesquisa. NECESSITA CORREÇÃO - TALVEZ UMA CONDICIONAL PARA A CRIAÇÃO DA DIV SOMENTE NA PRIMEIRA PESQUISA 
+    var elemento = document.createElement('div');
+    
+    for (i = 0; i < pokemons.length; i++){
+        var pai = document.getElementById('searchbox');
+        elemento.id = 'mainSection';
+        pai.appendChild(elemento);
         var mainSection = document.getElementById('mainSection');
+
 
 
 
         var cartao = document.createElement('div');
         cartao.className= 'div1';
-        mainSection.appendChild(cartao);
+        elemento.appendChild(cartao);
+        //mainSection.appendChild(cartao);
         /*Outra forma de adicionar elementos na div que talvez fosse mais facil
         mainSection.innerHTML = '<div class="div1">'
         */
@@ -149,6 +155,8 @@ function carregaOrdenado(){
             alert('clicou');
         });*/
     }
+    searchSection.parentNode.removeChild(searchSection);
+
 }
 
 
@@ -158,6 +166,10 @@ titulo.className = 'titulo';
 document.body.prepend(titulo);
 
 function pesquisar(){
+
+    var elementopsq = document.createElement('div');
+
+
     var textoPesquisa = document.getElementById('textoPesquisa').value;
 
     //Faz a verificação se o valor do input existe no Array Pokemons
@@ -173,12 +185,19 @@ function pesquisar(){
 
     //Apaga o conteúdo da mainSection 
     //mainSection.style.display = 'none';
-    mainSection.parentNode.removeChild(mainSection);
 
 
     //Criação do card da pesquisa
+
+
+    var paipsq = document.getElementById('searchbox');
+    elementopsq.id = 'searchSection';
+    paipsq.appendChild(elementopsq);
+    var mainSection = document.getElementById('mainSection');
+
+
     var sectionPesquisa = document.getElementById('searchSection');
-    
+
 
     sectionPesquisa.className = 'mainSection';
     var pesquisaCard = document.createElement('div');
@@ -203,7 +222,7 @@ function pesquisar(){
     var textoTipopsq = document.createElement('p');
     var textoTipo2psq = document.createElement('p');
 
-    alert(pokemons[index].tipo)
+    alert('Find!')
 
     if(pokemons[index].tipo[1] == undefined){
         textoTipopsq.innerHTML = JSON.stringify(pokemons[index].tipo[0]).replace(/"/g, '').toUpperCase();
@@ -215,4 +234,7 @@ function pesquisar(){
         textoTipo2psq.innerHTML = JSON.stringify(pokemons[index].tipo[1]).replace(/"/g, '').toUpperCase();
         pesquisaCard.appendChild(textoTipo2psq);
     }
+    mainSection.parentNode.removeChild(mainSection);
+
+
 }
